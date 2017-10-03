@@ -23,7 +23,8 @@ This container should use the predefined Dockerfile and need links to both the d
 Once you are done with the compose file you should be able to run `docker-compose up`
 The first time you will probably get en error that the database stoped, we need to create the database.
 ```
-docker-compose run todo rake db:setup
+docker-compose run todo rake db:reset
+docker-compose run todo rake db:migrate
 docker-compose up
 ```
 Now that the containers are up you should be able to go to http://localhost:8000
